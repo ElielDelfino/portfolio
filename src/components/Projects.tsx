@@ -32,6 +32,7 @@ function Projects() {
       description:
         'Aplicação full-stack para gerenciamento de tarefas desenvolvida com React e Node.js/Express, utilizando MongoDB como banco de dados através do Prisma ORM.',
       technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Prisma'],
+      link: 'https://to-do-list-frontend-ytbh.onrender.com/',
       github: 'https://github.com/ElielDelfino/to-do-list',
     },
   ]
