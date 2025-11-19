@@ -1,3 +1,14 @@
+import ReactIcon from '../assets/icons/React-Dark.svg'
+import TypeScriptIcon from '../assets/icons/TypeScript.svg'
+import JavaScriptIcon from '../assets/icons/JavaScript.svg'
+import HTMLIcon from '../assets/icons/HTML.svg'
+import CSSIcon from '../assets/icons/CSS.svg'
+import ViteIcon from '../assets/icons/Vite-Dark.svg'
+import NodeJSIcon from '../assets/icons/NodeJS-Dark.svg'
+import ExpressIcon from '../assets/icons/ExpressJS-Dark.svg'
+import MongoDBIcon from '../assets/icons/MongoDB.svg'
+import PrismaIcon from '../assets/icons/Prisma.svg'
+
 interface Project {
   id: number
   title: string
@@ -13,8 +24,8 @@ function Projects() {
       id: 1,
       title: 'MedicoCopilot',
       description:
-        'Sistema web para transcrição de áudio e geração de relatórios médicos utilizando OpenAI Whisper e GPT-3.5.',
-      technologies: ['React', 'TypeScript', 'Vite', 'Node.js', 'Express', 'OpenAI API'],
+        'Sistema web para transcrição de áudio e geração de relatórios médicos precisos e estruturados utilizando OpenAI Whisper e GPT-3.5.',
+      technologies: ['React', 'TypeScript', 'Vite', 'Node.js', 'Express'],
       link: 'https://medicocopilot-1.onrender.com',
       github: 'https://github.com/ElielDelfino/MedicoCopilot/',
     },
@@ -22,7 +33,7 @@ function Projects() {
       id: 2,
       title: 'BarbeariaKenzie',
       description:
-        'Sistema web para gerenciamento de agendamentos de barbearia desenvolvido como projeto da Kenzie Academy.',
+        'Sistema web para gerenciamento de agendamentos de barbearia desenvolvido como projeto da Kenzie Academy com foco  de aprendizado em JavaScript, HTML e CSS.',
       technologies: ['JavaScript', 'HTML', 'CSS'],
       github: 'https://github.com/ElielDelfino/BarbeariaKenzie',
     },
@@ -37,34 +48,25 @@ function Projects() {
     },
   ]
 
-  const codeLines = [
-    'const project = { name: "Portfolio", tech: ["React", "TypeScript"] };',
-    'function createProject() { return { id: 1, title: "App" }; }',
-    'import { useState } from "react";',
-    'const [data, setData] = useState([]);',
-    'export default function App() { return <div>Hello</div>; }',
-    'const api = async () => { const res = await fetch(url); }',
-    'interface User { id: number; name: string; }',
-    'const users: User[] = [];',
-  ]
+  const getTechnologyIcon = (techName: string) => {
+    const techIcons: { [key: string]: string } = {
+      'React': ReactIcon,
+      'TypeScript': TypeScriptIcon,
+      'JavaScript': JavaScriptIcon,
+      'HTML': HTMLIcon,
+      'CSS': CSSIcon,
+      'Vite': ViteIcon,
+      'Node.js': NodeJSIcon,
+      'Express': ExpressIcon,
+      'MongoDB': MongoDBIcon,
+      'Prisma': PrismaIcon,
+    }
+    return techIcons[techName] || ''
+  }
+
 
   return (
     <section id="projects" className="section projects">
-      <div className="code-background">
-        {codeLines.map((line, index) => (
-          <div
-            key={index}
-            className="code-line"
-            style={{
-              top: `${15 + index * 12}%`,
-              animationDelay: `${index * 2}s`,
-              animationDuration: `${20 + index * 3}s`,
-            }}
-          >
-            {line}
-          </div>
-        ))}
-      </div>
       <div className="container">
         <h2 className="section-title">Projetos</h2>
         <div className="projects-grid">
@@ -73,11 +75,18 @@ function Projects() {
               <h3 className="project-title">{project.title}</h3>
               <p className="project-description">{project.description}</p>
               <div className="project-technologies">
-                {project.technologies.map((tech, index) => (
-                  <span key={index} className="tech-tag">
-                    {tech}
-                  </span>
-                ))}
+                {project.technologies.map((tech, index) => {
+                  const techIcon = getTechnologyIcon(tech)
+                  return (
+                    <div key={index} className="tech-icon-wrapper" title={tech}>
+                      {techIcon ? (
+                        <img src={techIcon} alt={tech} className="tech-icon" />
+                      ) : (
+                        <span className="tech-tag">{tech}</span>
+                      )}
+                    </div>
+                  )
+                })}
               </div>
               <div className="project-links">
                 {project.link && (
@@ -85,7 +94,7 @@ function Projects() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="project-link"
+                    className="project-link project-link-button"
                   >
                     Ver Projeto
                   </a>
@@ -95,7 +104,7 @@ function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="project-link"
+                    className="project-link project-link-button"
                   >
                     GitHub
                   </a>

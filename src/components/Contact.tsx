@@ -4,10 +4,12 @@ function Contact() {
       <div className="container">
         <h2 className="section-title">Contato</h2>
         <div className="contact-content">
-          <p className="contact-description">
-            Estou sempre aberto a novas oportunidades e colaborações. Entre em
-            contato comigo através dos canais abaixo:
-          </p>
+          <div className="contact-description-wrapper">
+            <p className="contact-description">
+              Estou sempre aberto a novas oportunidades e colaborações. Entre em
+              contato comigo através dos canais abaixo:
+            </p>
+          </div>
           <div className="contact-links">
             <a
               href="mailto:eliel.delfino@fanut.ufal.br"

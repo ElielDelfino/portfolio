@@ -18,7 +18,14 @@ function Header() {
     }
     const element = document.getElementById(id)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      const headerHeight = 80
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+      const offsetPosition = elementPosition - headerHeight
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
     }
   }
 
@@ -29,10 +36,10 @@ function Header() {
           Portfólio
         </div>
         <ul className="nav-links">
-          <li onClick={() => scrollToSection('about')}>Sobre</li>
-          <li onClick={() => scrollToSection('projects')}>Projetos</li>
-          <li onClick={() => scrollToSection('skills')}>Habilidades</li>
-          <li onClick={() => scrollToSection('contact')}>Contato</li>
+          <li data-id="about" onClick={() => scrollToSection('about')}>Sobre</li>
+          <li data-id="projects" onClick={() => scrollToSection('projects')}>Projetos</li>
+          <li data-id="skills" onClick={() => scrollToSection('skills')}>Habilidades</li>
+          <li data-id="contact" onClick={() => scrollToSection('contact')}>Contato</li>
         </ul>
       </nav>
     </header>

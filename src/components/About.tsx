@@ -17,21 +17,23 @@ function About() {
               }}
             />
           </div>
-          <div className="about-text">
-            <p>
-              Olá! Sou um desenvolvedor apaixonado por criar soluções inovadoras
-              e eficientes. Tenho experiência em desenvolvimento web moderno,
-              focado em criar experiências de usuário excepcionais.
-            </p>
-            <p>
-              Minha jornada na programação começou com curiosidade e desde então
-              tenho me dedicado a aprender e aplicar as melhores práticas de
-              desenvolvimento.
-            </p>
-            <p>
-              Estou sempre em busca de novos desafios e oportunidades para
-              crescer profissionalmente e contribuir com projetos significativos.
-            </p>
+          <div className="about-text-wrapper">
+            <div className="about-text">
+              <p>
+                Olá! Sou um desenvolvedor apaixonado por criar soluções inovadoras
+                e eficientes. Tenho experiência em desenvolvimento web moderno,
+                focado em criar experiências de usuário excepcionais.
+              </p>
+              <p>
+                Minha jornada na programação começou com curiosidade e desde então
+                tenho me dedicado a aprender e aplicar as melhores práticas de
+                desenvolvimento.
+              </p>
+              <p>
+                Estou sempre em busca de novos desafios e oportunidades para
+                crescer profissionalmente e contribuir com projetos significativos.
+              </p>
+            </div>
           </div>
         </div>
       </div>
