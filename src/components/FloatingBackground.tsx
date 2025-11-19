@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import ReactIcon from '../assets/icons/React-Dark.svg'
 import TypeScriptIcon from '../assets/icons/TypeScript.svg'
 import JavaScriptIcon from '../assets/icons/JavaScript.svg'
@@ -74,6 +75,19 @@ import GCPIcon from '../assets/icons/GCP-Dark.svg'
 import AzureIcon from '../assets/icons/Azure-Dark.svg'
 
 function FloatingBackground() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   const baseIcons = [
     { icon: ReactIcon, name: 'React' },
     { icon: TypeScriptIcon, name: 'TypeScript' },
@@ -151,20 +165,21 @@ function FloatingBackground() {
     { icon: AzureIcon, name: 'Azure' },
   ]
 
+  const iconCount = isMobile ? 30 : 150
   const floatingIcons = []
-  for (let i = 0; i < 150; i++) {
+  for (let i = 0; i < iconCount; i++) {
     floatingIcons.push(baseIcons[i % baseIcons.length])
   }
 
   return (
     <div className="code-background">
       {floatingIcons.map((item, index) => {
-        const totalRows = 15
+        const totalRows = isMobile ? 8 : 15
         const iconsPerRow = Math.ceil(floatingIcons.length / totalRows)
         const row = Math.floor(index / iconsPerRow)
         const topPosition = 1 + (row * (98 / totalRows))
         const animationDelay = (index * 0.1) % 35
-        const animationDuration = 15 + (index % 12) * 2
+        const animationDuration = isMobile ? 20 + (index % 8) * 2 : 15 + (index % 12) * 2
 
         return (
           <div
@@ -176,7 +191,7 @@ function FloatingBackground() {
               animationDuration: `${animationDuration}s`,
             }}
           >
-            <img src={item.icon} alt={item.name} />
+            <img src={item.icon} alt={item.name} loading="lazy" />
           </div>
         )
       })}
