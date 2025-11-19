@@ -14,6 +14,7 @@ interface Project {
   title: string
   description: string
   technologies: string[]
+  image: string
   link?: string
   github?: string
 }
@@ -26,6 +27,7 @@ function Projects() {
       description:
         'Sistema web para transcrição de áudio e geração de relatórios médicos precisos e estruturados utilizando OpenAI Whisper e GPT-3.5.',
       technologies: ['React', 'TypeScript', 'Vite', 'Node.js', 'Express'],
+      image: 'https://img.odcdn.com.br/wp-content/uploads/2023/10/Inteligencia-Artificial-Medicina.png',
       link: 'https://medicocopilot-1.onrender.com',
       github: 'https://github.com/ElielDelfino/MedicoCopilot/',
     },
@@ -35,6 +37,7 @@ function Projects() {
       description:
         'Sistema web para gerenciamento de agendamentos de barbearia desenvolvido como projeto da Kenzie Academy com foco  de aprendizado em JavaScript, HTML e CSS.',
       technologies: ['JavaScript', 'HTML', 'CSS'],
+      image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=800&h=400&fit=crop',
       github: 'https://github.com/ElielDelfino/BarbeariaKenzie',
     },
     {
@@ -43,6 +46,7 @@ function Projects() {
       description:
         'Aplicação full-stack para gerenciamento de tarefas desenvolvida com React e Node.js/Express, utilizando MongoDB como banco de dados através do Prisma ORM.',
       technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Prisma'],
+      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=400&fit=crop',
       link: 'https://to-do-list-frontend-ytbh.onrender.com/',
       github: 'https://github.com/ElielDelfino/to-do-list',
     },
@@ -70,8 +74,23 @@ function Projects() {
       <div className="container">
         <h2 className="section-title">Projetos</h2>
         <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.id} className="project-card">
+          {projects.map((project, index) => (
+            <div 
+              key={project.id} 
+              className="project-card"
+              style={{ '--index': index } as React.CSSProperties}
+            >
+              <div className="project-image-wrapper">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="project-image"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement
+                    target.src = 'https://via.placeholder.com/800x400?text=' + encodeURIComponent(project.title)
+                  }}
+                />
+              </div>
               <h3 className="project-title">{project.title}</h3>
               <p className="project-description">{project.description}</p>
               <div className="project-technologies">

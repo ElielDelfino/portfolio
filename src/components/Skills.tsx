@@ -60,7 +60,11 @@ function Skills() {
         <h2 className="section-title">Habilidades</h2>
         <div className="skills-grid">
           {skills.map((skill, index) => (
-            <div key={index} className="skill-item">
+            <div 
+              key={index} 
+              className="skill-item"
+              style={{ '--index': index } as React.CSSProperties}
+            >
               <img 
                 src={getSkillIcon(skill)} 
                 alt={skill} 
