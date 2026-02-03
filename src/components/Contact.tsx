@@ -6,7 +6,7 @@ function Contact() {
         <div className="contact-content">
           <div className="contact-description-wrapper">
             <p className="contact-description">
-              Estou sempre aberto a novas oportunidades e colaborações. Entre em
+              Aberto a novas oportunidades e colaborações. Entre em
               contato comigo através dos canais abaixo:
             </p>
           </div>
