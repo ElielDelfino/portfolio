@@ -20,7 +20,7 @@ function About() {
           <div className="about-text-wrapper">
             <div className="about-text">
               <p>
-                Olá! Sou um desenvolvedor apaixonado por criar soluções inovadoras
+                Sou um desenvolvedor apaixonado por criar soluções inovadoras
                 e eficientes. Tenho experiência em desenvolvimento web moderno,
                 focado em criar experiências de usuário excepcionais.
               </p>
