@@ -46,13 +46,13 @@ jobs:
           chmod 400 portfolio_key.pem
           ssh -i portfolio_key.pem -o StrictHostKeyChecking=no ec2-user@$PUBLIC_IP << EOF
             aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 890871562295.dkr.ecr.us-east-2.amazonaws.com
-            docker pull 890871562295.dkr.ecr.us-east-2.amazonaws.com/ecr-portfolio-guinho:v1.0
+            docker pull 890871562295.dkr.ecr.us-east-2.amazonaws.com/portfolio-guinho:v1.0
             echo "parando container antigo site"
             docker stop site || true
             echo "removendo container antigo site"
             docker rm site || true
             echo "rodando nova tag da imagem"
-            docker run -d -p 80:80 --name site 890871562295.dkr.ecr.us-east-2.amazonaws.com/ecr-lab-guinho:v1.0
+            docker run -d -p 80:80 --name site 890871562295.dkr.ecr.us-east-2.amazonaws.com/portfolio-guinho:v1.0
             echo "Parabéns! Imagem foi atualizada!"
             docker ps
           EOF
