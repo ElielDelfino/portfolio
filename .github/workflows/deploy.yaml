@@ -56,4 +56,4 @@ jobs:
             echo "Parabéns! Imagem foi atualizada!"
             docker ps
           EOF
-          rm chave-ssh.pem
+          rm portfolio_key.pem
