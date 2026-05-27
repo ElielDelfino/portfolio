@@ -94,7 +94,7 @@ function Projects() {
         'Plataforma completa para personal trainers gerenciarem alunos: controle financeiro, cadastro, criação de dietas, treinos e cardio. Área exclusiva do aluno com protocolo interativo, execução de treinos e acompanhamento nutricional. Upload de mídias via AWS S3, envio de e-mails com Resend e geração de PDF com Puppeteer.',
       technologies: ['React', 'Tailwind', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'AWS S3', 'Docker'],
       image: coachSystemImg,
-      link: 'https://kunlatekdevops-frontend.y8dalo.easypanel.host/login',
+      link: 'http://44.192.99.40/login',
       github: 'https://github.com/ElielDelfino/coach-system',
     },
     {
