@@ -13,6 +13,18 @@ import GitHubIcon from '../assets/icons/Github-Dark.svg'
 import LinuxIcon from '../assets/icons/Linux-Dark.svg'
 import VSCodeIcon from '../assets/icons/VSCode-Dark.svg'
 import FigmaIcon from '../assets/icons/Figma-Dark.svg'
+import TerraformIcon from '../assets/icons/Terraform-Dark.svg'
+import AWSIcon from '../assets/icons/AWS-Dark.svg'
+import KubernetesIcon from '../assets/icons/Kubernetes.svg'
+import DockerIcon from '../assets/icons/Docker.svg'
+import GithubActionsIcon from '../assets/icons/GithubActions-Dark.svg'
+import ArgoCDIcon from '../assets/icons/ArgoCD.svg'
+import HelmIcon from '../assets/icons/Helm.svg'
+import DatadogIcon from '../assets/icons/Datadog.svg'
+import PostgreSQLIcon from '../assets/icons/PostgreSQL-Dark.svg'
+import RedisIcon from '../assets/icons/Redis-Dark.svg'
+import TailwindIcon from '../assets/icons/TailwindCSS-Dark.svg'
+import PrismaIcon from '../assets/icons/Prisma.svg'
 
 function Skills() {
   const skills = [
@@ -21,11 +33,23 @@ function Skills() {
     'JavaScript',
     'HTML',
     'CSS',
+    'Tailwind',
     'Vite',
     'Node.js',
     'Express',
+    'Prisma',
     'MongoDB',
     'MySQL',
+    'PostgreSQL',
+    'Redis',
+    'Docker',
+    'Kubernetes',
+    'Terraform',
+    'AWS',
+    'ArgoCD',
+    'Helm',
+    'Datadog',
+    'GitHub Actions',
     'Git',
     'GitHub',
     'Linux',
@@ -50,6 +74,18 @@ function Skills() {
       Linux: LinuxIcon,
       'VS Code': VSCodeIcon,
       Figma: FigmaIcon,
+      Terraform: TerraformIcon,
+      AWS: AWSIcon,
+      Kubernetes: KubernetesIcon,
+      Docker: DockerIcon,
+      'GitHub Actions': GithubActionsIcon,
+      ArgoCD: ArgoCDIcon,
+      Helm: HelmIcon,
+      Datadog: DatadogIcon,
+      PostgreSQL: PostgreSQLIcon,
+      Redis: RedisIcon,
+      Tailwind: TailwindIcon,
+      Prisma: PrismaIcon,
     }
     return icons[skill] || ''
   }
